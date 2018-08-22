@@ -1,0 +1,20 @@
+#固定視窗尺寸大小
+        candleForm.setFixedSize(900, 600)
+#變更視窗位置(x, y)
+        candleForm.move(505, 100)
+
+
+#匯入視窗函式庫
+from setForm import Ui_setForm
+
+#class Ui_MainWindow(object):
+	#定義跳出視窗函式    	
+	def open_setForm(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_setForm()
+        self.ui.setupUi(self.window)
+        self.window.show()
+		
+		
+#按下按鈕新增視窗
+		self.btn_open_control.clicked.connect(self.open_setForm)

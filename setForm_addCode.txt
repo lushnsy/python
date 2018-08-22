@@ -1,0 +1,4 @@
+#固定視窗尺寸大小
+setForm.setFixedSize(630, 460)
+
+

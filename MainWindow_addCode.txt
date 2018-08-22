@@ -1,0 +1,65 @@
+﻿彈出新視窗
+https://www.youtube.com/watch?v=dRRpbDFnMHI
+https://stackoverflow.com/questions/47482998/pyqt5-create-multiple-views-with-designer-and-connect-them-in-one-app
+關閉應用程序
+https://blog.csdn.net/weiaitaowang/article/details/52071427
+
+
+
+#固定視窗尺寸大小
+        MainWindow.setFixedSize(390, 100)
+        #變更視窗位置(x, y)
+        MainWindow.move(95, 100)
+
+
+#匯入視窗函式庫
+from setForm (新視窗的物件名稱)import Ui_setForm
+from backtestForm import Ui_backtestForm
+from candleForm import Ui_candleForm
+#匯入應用函式庫
+from PyQt5.QtCore import QCoreApplication
+
+#class Ui_MainWindow(object):
+	#定義跳出視窗函式
+    def open_setForm(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_setForm()
+        self.ui.setupUi(self.window)
+        self.window.show()
+		self.ShowBacktestAction.setEnabled(True)
+        self.SetInfAction.setEnabled(False)
+    def open_backtestForm(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_backtestForm()
+        self.ui.setupUi(self.window)
+        self.window.show()
+		self.ShowKAction.setEnabled(True)
+    def open_candleForm(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_candleForm()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+
+在下方增加按鈕控制項(btn_open為按鈕變數名稱)
+#self.btn_open_control.setObjectName("btn_open_control")
+	#按下按鈕新增視窗
+        self.btn_open_control.clicked.connect(self.open_setForm)
+        self.btn_open_backtest.clicked.connect(self.open_backtestForm)
+        self.btn_open_candle.clicked.connect(self.open_candleForm)
+
+		
+關閉應用程序
+#self.btn_exit.clicked.connect(MainWindow.close)
+上述修改為
+        self.btn_exit.clicked.connect(QCoreApplication.instance().quit)
+
+
+
+
+
+
+
+
+
+	
