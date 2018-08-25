@@ -1,10 +1,3 @@
-﻿彈出新視窗
-https://www.youtube.com/watch?v=dRRpbDFnMHI
-https://stackoverflow.com/questions/47482998/pyqt5-create-multiple-views-with-designer-and-connect-them-in-one-app
-關閉應用程序
-https://blog.csdn.net/weiaitaowang/article/details/52071427
-
-
 
 #固定視窗尺寸大小
         MainWindow.setFixedSize(390, 100)
